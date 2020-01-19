@@ -58,7 +58,11 @@ url    : localhost:4444/api/v1/ticket
 
 Method : GET
 
-url    : localhost:4444/api/v1/get_info
+```
+localhost:4444/api/v1/get_info
+```
+
+
 
 ### 5. to create transaction 
 
