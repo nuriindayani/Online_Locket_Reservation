@@ -34,12 +34,13 @@ exports.update = (req, res) => {
 
 exports.createOne = (req, res) => {
     // events.create(req.body).then(data =>
+    let startTime = new Date();
     let endTime = new Date();
-    endTime.setDate(endTime.getDate() + 1)
+    endTime.setDate(endTime.getDate() + 2)
     events.create(
         {
             title: req.body.title,
-            startTime: req.body.startTime,
+            startTime: startTime,
             endTime: endTime,
             id_loc: req.body.id_loc,
             detail_loc: req.body.detail_loc
