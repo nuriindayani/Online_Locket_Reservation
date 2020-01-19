@@ -17,7 +17,7 @@ status pending saya gunakan saat customer sudah melakukan pembayaran  dan belum 
 
 
 
-<img src="./Image/moreThan.JPG" alt="moreThan"/>
+<img src="./Image/morethan.JPG" alt="morethan"/>
 
 # moreThan
 fungsi ini dibuat sebagai parameter, jika pembelli membeli tiket melebihi quota yang tersedia maka pembelian ticket gagal. Namun jika pembelian <= qouta yang tersedia maka pembelian terebut adalah berhasil(success).
