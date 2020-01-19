@@ -8,8 +8,13 @@ module.exports = (sequelize, DataTypes) => {
     status: DataTypes.STRING,
     ticket_id: DataTypes.INTEGER
   }, {});
-  purchases.associate = function(models) {
+  purchases.associate = function (models) {
     // associations can be defined here
+    purchases.belongsTo(models.tickets, {
+      as: "purchase",
+      foreignKey: "ticket_id"
+    });
+
   };
   return purchases;
 };

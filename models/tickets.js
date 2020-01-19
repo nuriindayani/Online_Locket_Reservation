@@ -15,6 +15,11 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "ticket_id"
     });
 
+    tickets.belongsTo(models.events, {
+      as: "event",
+      foreignKey: "id_event"
+    });
+
   };
   return tickets;
 };

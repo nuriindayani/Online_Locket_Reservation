@@ -6,15 +6,68 @@ const tickets = models.tickets;
 // const { Events } = require("../helpers/functions");
 
 exports.showAll = (req, res) => {
-    purchases.findAll().then(data => res.send(data));
+    purchases.findAll(
+        {
+            include: [
+                {
+                    model: tickets,
+                    as: "purchase",
+                    include: [
+                        {
+                            model: events,
+                            as: "event",
+                            include: [
+                                {
+                                    model: locations,
+                                    as: "location"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+
+    ).then(data => res.send(data));
 };
 
 
 exports.showOne = (req, res) => {
-    purchases.findOne({ where: { id: req.params.id } }).then(data => {
-        res.send(data)
-    });
+    purchases.findOne({
+        where: {
+            id: req.params.id
+        },
+        include: [
+            {
+                model: tickets,
+                as: "purchase",
+                include: [
+                    {
+                        model: events,
+                        as: "event",
+                        include: [
+                            {
+                                model: locations,
+                                as: "location"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }).then(data => res.send(data));
 };
+
+
+
+
+
+
+// exports.showOne = (req, res) => {
+//     purchases.findOne({ where: { id: req.params.id } }).then(data => {
+//         res.send(data)
+//     });
+// };
 
 
 exports.update = (req, res) => {
@@ -55,7 +108,7 @@ exports.post = (req, res) => {
             } else {
                 if (req.body.quantity === 0) {
                     res.send({
-                        message: 'quantity must be higher than 0'
+                        message: 'quantity must be more than 0'
                     })
                 } else if (req.body.quantity > ticket.stock) {
                     res.send({

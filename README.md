@@ -40,31 +40,43 @@ This project can be tested in Postman, by importing the db_gorry.sql database, a
 
 Method : POST
 
-url    : localhost:4444/api/v1/event
+```
+localhost:4444/api/v1/event
+```
 
 ### 2. to create location
 
 Method : POST
 
-url    : localhost:4444/api/v1/location
+```
+localhost:4444/api/v1/location
+```
 
 ### 3. to create ticket
 
 Method : POST
 
-url    : localhost:4444/api/v1/ticket
+```
+localhost:4444/api/v1/ticket
+```
 
 ### 4. to get info about event
 
 Method : GET
 
-url    : localhost:4444/api/v1/get_info
+```
+localhost:4444/api/v1/get_info
+```
+
+
 
 ### 5. to create transaction 
 
 Method : POST
 
-url    : localhost:4444/api/v1/purchase
+```
+localhost:4444/api/v1/purchase
+```
 
 ### 6. to get info about transactions
 
@@ -72,16 +84,18 @@ to get all transaction
 
 Method : GET
 
-url    : localhost:4444/api/v1/get_purchases
-
+```
+localhost:4444/api/v1/get_purchases
+```
 
 
 to get transaction by id
 
-url    : localhost:4444/api/v1/get_purchase/:id
+```
+localhost:4444/api/v1/get_purchase/:id
+```
 
 example:
 ```
 localhost:4444/api/v1/get_purchase/21
 ```
-
